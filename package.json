@@ -2,16 +2,13 @@
   "name": "node-edge",
   "description": "An asynchronous edge server (for your own CDN) built with node.",
   "version": "0.1.0",
-  "repository": {
-    "url": ""
-  },
+  "repository": "git://github.com/nathanwdavis/Edge.git",
   "author": "Nathan Davis",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "test"
   },
   "engines": {
     "node": ">= 0.4.4"
