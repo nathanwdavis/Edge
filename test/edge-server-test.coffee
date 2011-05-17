@@ -2,6 +2,8 @@ assert = require 'assert'
 http = require 'http'
 edge = require '../lib/edge-server.js'
 
+
+
 edge_server = edge.createServer({host: 'localhost', port:9000})
 
 mockMasterServer = http.createServer( (req, resp) ->

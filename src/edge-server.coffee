@@ -124,7 +124,7 @@ exports.createServer = createServer = (masterEndPoint) ->
 
     ###
     ###
-       Is this is one already waiting on a respone
+       Is this one already waiting on a respone
     ###
     if queuedReq = masterReqQueue[req.url]
       #hook into events here
