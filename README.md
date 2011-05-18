@@ -21,7 +21,7 @@ Additional options:
 You can also just use directly from the command line (equivalent to
 above:
 
-     > node lib/edge-server.js nodejs.org 80 pa/cs/v0.4.7/api/assets 172800
+     > node lib/edge-server.js nodejs.org 80 /docs/api/v0.4.7/api/assets 172800
 
 
 Edge supports the following common features:
