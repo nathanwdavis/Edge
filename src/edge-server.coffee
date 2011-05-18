@@ -55,9 +55,12 @@ util.inherits(ResponseCacheValue, events.EventEmitter)
 ResponseCacheValue::setHead = (statusCode, headers) ->
   @statusCode = statusCode
   @headers = headers
-  # don't cache a Connection header
+
+  # don't cache a some headers
   if @headers.connection
     delete @headers.connection
+  if @headers['set-cookie']
+    delete @headers['set-cookie']
 
   # set a default cache-control if there isn't one
   # and set a @ttl attribute (milliseconds)
@@ -151,6 +154,9 @@ exports.createServer = createServer = (masterEndPoint) ->
       log 'cache miss, queuing request'
       queuedReq = new QueuedRequest()
       masterReqQueue[req.url] = queuedReq
+
+      if req.headers['cookie']
+        delete req.headers['cookie']
 
       masterReqOpts = {
         host: masterEndPoint.host,
