@@ -57,7 +57,7 @@ ResponseCacheValue::setHead = (statusCode, headers) ->
   @headers = headers
   # don't cache a Connection header
   if @headers.connection
-    delete headers.connection
+    delete @headers.connection
 
   # set a default cache-control if there isn't one
   # and set a @ttl attribute (milliseconds)
@@ -160,8 +160,9 @@ exports.createServer = createServer = (masterEndPoint) ->
       }
 
       proxReq = http.get(masterReqOpts, (proxResp) ->
-        respondFromMasterResponse(resp, proxResp)
         cacheValue = buildCacheValueFromMasterResponse(proxResp)
+        proxResp.headers = cacheValue.headers
+        respondFromMasterResponse(resp, proxResp)
         cacheValue.on('complete', ->
           fileCache[req.url] = cacheValue
           queuedReq.end(cacheValue)
