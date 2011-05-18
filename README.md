@@ -14,3 +14,4 @@ Edge supports the following advanced features:
 * Correctly uses client request headers to respond with 304 if possible
 * Simultaneous requests for the same cache missed asset will not result in multiple origin server requests. Each request will listen on the response of one single origin server request.
 
+__Note:__ This project has not been battle-tested. It is not production-ready.... yet.
