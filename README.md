@@ -5,6 +5,11 @@ Edge is a lightweight edge server for a CDN that runs on Node. It has no depende
      var edge = require('Edge');
      var edge_server = edge.createServer({host: 'nodejs.org'});
 
+
+This simple configuration will reverse proxy, then cache all responses
+keyed on the request URL.
+
+
 Additional options:
 
      var edge_server = edge.createServer({host: 'nodejs.org', 
@@ -18,8 +23,6 @@ above:
 
      > node lib/edge-server.js nodejs.org 80 pa/cs/v0.4.7/api/assets 172800
 
-This simple configuration will reverse proxy, then cache all responses
-keyed on the request URL.
 
 Edge supports the following common features:
 
