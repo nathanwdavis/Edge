@@ -212,7 +212,7 @@ tryRespondFromCache = (req, resp) ->
   if typeof file == 'object'
 
     if req.headers['if-modified-since']
-      debugger
+      #debugger
       dateToCompare = Date.parse(req.headers['if-modified-since'])
       lastModified = Date.parse(file.headers['last-modified'])
       if (lastModified > 0 and dateToCompare > 0 and
