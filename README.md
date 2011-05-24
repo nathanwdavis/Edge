@@ -33,4 +33,6 @@ Edge supports the following common features:
 * Cookieless
 * Simultaneous requests for the same cache missed asset will not result in multiple origin server requests. Each request will listen on the response of one single origin server request.
 
+__More:__ For more info on CDNs, Node, and why I built this see these presentation slides: https://docs.google.com/present/view?id=dggt936r_21gg4kc7f6
+
 __Note:__ This project has not been battle-tested. It is not production-ready.... yet.
